@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "start": "node cleanup.js",
-        "purge-wetnotes": "cross-env RES_GROUP=wetnotes ACR_NAME=wetnotes REPO_NAMES=ccrliberty-com,cdn-app-1/ccrliberty-com npm start"
+        "purge-wetnotes": "cross-env RES_GROUP=wetnotes ACR_NAME=wetnotes REPO_NAMES=ccrliberty-com,cdn-app-1/ccrliberty-com,cdn-app-2/ccrliberty-com npm start"
     },
     "dependencies": {
         "cross-env": "^5.2.0",

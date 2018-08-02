@@ -95,7 +95,8 @@ async function processRepository(repoName) {
     if (!doRemove) return 0;
 
     for (const manifest of manifests) {
-        let res = spawn.sync("az", ["acr", "repository", "delete", "--resource-group", ResGroup, "--name", AcrName, "--image", repoName + "@" + manifest.digest], "--yes", { stdio: "inherit" });
+        console.log(repoName + "@" + manifest.digest);
+        let res = spawn.sync("az", ["acr", "repository", "delete", "--resource-group", ResGroup, "--name", AcrName, "--image", repoName + "@" + manifest.digest, "--yes"], { stdio: "inherit" });
         if (res.status !== 0) {
             throw new Error("The call to remove the untagged image from the ACR failed.");
         }
